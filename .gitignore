@@ -1,3 +1,5 @@
-*.exe
+main
 log/*.log
+coverage/*.out
 !log/.keep
+!coverage/.keep

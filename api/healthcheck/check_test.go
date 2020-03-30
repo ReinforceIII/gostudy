@@ -13,10 +13,10 @@ func TestHealthCheck(t *testing.T) {
 	gin.SetMode(gin.TestMode)
 	res := httptest.NewRecorder()
 	c, r := gin.CreateTestContext(res)
-	r.Use(HealthCheck)
+	r.GET("/test", HealthCheck)
 
 	var err error
-	c.Request, err = http.NewRequest(http.MethodGet, "/check", nil)
+	c.Request, err = http.NewRequest(http.MethodGet, "/test", nil)
 	r.ServeHTTP(res, c.Request)
 
 	assert.Nil(t, err)
