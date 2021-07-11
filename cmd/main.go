@@ -11,5 +11,6 @@ func main() {
 
 	r.GET("/check", healthcheck.HealthCheck)
 	r.GET("/hello", mainpage.Hello)
+	r.GET("/routine", mainpage.RoutineHandler)
 	r.Run()
 }
